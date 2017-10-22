@@ -1,0 +1,20 @@
+<mat-grid-list cols="4" rowHeight="1:1">
+  <mat-grid-tile  *ngFor="let order of orders$ | async; let i = index"> 
+    <mat-card class="orderCard">
+      <mat-card-title>
+        # {{i}}-{{order.status}}
+      </mat-card-title>
+      <mat-card-content>
+        Address: {{order.address}}<br>
+        Delivery time:  {{order.time}}<br>
+        size: {{order.size}}<br>
+        topping: {{order.topping}}<br>
+        type:  {{order.type}}<br>
+        crust:  {{order.crust}}<br>
+        sauce:  {{order.sauce ? order.sauce : 'Nothing'}}<br>
+      </mat-card-content>
+     
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
+
